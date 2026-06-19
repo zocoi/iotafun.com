@@ -16,7 +16,12 @@ async function generateStaticHtml() {
   html = html.replace(/href="\/favicon\.svg"/g, 'href="./favicon.svg"');
   html = html.replace(/url\(\/assets\//g, "url(./assets/");
   html = html.replace(/src="\/assets\//g, 'src="./assets/');
-  html = html.replace(/import\("\/assets\//g, 'import("./assets/');
+
+  // Fix escaped import paths inside inline script blocks
+  html = html.split('import(\\"/assets/').join('import(\\"./assets/');
+
+  // Fix quoted asset paths in JSON/script contexts (e.g. preloads arrays)
+  html = html.split('"/assets/').join('"./assets/');
 
   // Remove dev-only tanstack router dev styles link if present
   html = html.replace(
