@@ -28,8 +28,7 @@ export const Route = createFileRoute("/")({
   component: Landing,
 });
 
-const SOLITAIRE_URL =
-  "https://apps.apple.com/us/app/solitaire-classic-angel-dates/id6779414887";
+const SOLITAIRE_URL = "https://apps.apple.com/us/app/solitaire-classic-angel-dates/id6779414887";
 const PAC_URL = "https://pac-vs-ghosts.pages.dev/";
 
 function Landing() {
@@ -59,12 +58,20 @@ function Nav() {
       <div className="mx-auto max-w-7xl px-6 h-16 flex items-center justify-between">
         <a href="#top" className="flex items-center gap-2 font-display font-bold text-lg">
           <Logo />
-          <span>iota<span className="text-accent">.fun</span></span>
+          <span>
+            iota<span className="text-accent">.fun</span>
+          </span>
         </a>
         <nav className="hidden md:flex items-center gap-8 text-sm text-muted-foreground font-mono">
-          <a href="#games" className="hover:text-foreground transition">games</a>
-          <a href="#lab" className="hover:text-foreground transition">lab</a>
-          <a href="mailto:hi@iota.fun" className="hover:text-foreground transition">contact</a>
+          <a href="#games" className="hover:text-foreground transition">
+            games
+          </a>
+          <a href="#lab" className="hover:text-foreground transition">
+            lab
+          </a>
+          <a href="mailto:hi@iota.fun" className="hover:text-foreground transition">
+            contact
+          </a>
         </nav>
         <a
           href="#games"
@@ -98,8 +105,8 @@ function Hero() {
         </h1>
 
         <p className="mt-8 max-w-xl text-lg text-muted-foreground leading-relaxed">
-          iota.fun ships small, joyful games — built by a studio obsessed with
-          crisp feel, weird ideas, and zero loading screens.
+          iota.fun ships small, joyful games — built by a studio obsessed with crisp feel, weird
+          ideas, and zero loading screens.
         </p>
 
         <div className="mt-10 flex flex-wrap gap-3">
@@ -204,7 +211,16 @@ function Games() {
 }
 
 function GameCard({
-  tag, title, description, features, image, imageAlt, ctaLabel, ctaIcon, href, accent,
+  tag,
+  title,
+  description,
+  features,
+  image,
+  imageAlt,
+  ctaLabel,
+  ctaIcon,
+  href,
+  accent,
 }: {
   tag: string;
   title: string;
@@ -241,7 +257,10 @@ function GameCard({
 
         <ul className="mt-6 flex flex-wrap gap-2">
           {features.map((f) => (
-            <li key={f} className="px-3 py-1 rounded-full bg-muted text-muted-foreground font-mono text-xs">
+            <li
+              key={f}
+              className="px-3 py-1 rounded-full bg-muted text-muted-foreground font-mono text-xs"
+            >
               {f}
             </li>
           ))}
@@ -317,16 +336,28 @@ function Footer() {
       <div className="mx-auto max-w-7xl px-6 py-12 flex flex-col md:flex-row gap-6 md:items-center md:justify-between">
         <div className="flex items-center gap-2 font-display font-bold">
           <Logo />
-          <span>iota<span className="text-accent">.fun</span></span>
+          <span>
+            iota<span className="text-accent">.fun</span>
+          </span>
           <span className="ml-3 font-mono text-xs text-muted-foreground">
             © {new Date().getFullYear()} · A startup lab
           </span>
         </div>
         <div className="flex gap-6 font-mono text-xs text-muted-foreground">
-          <a href={SOLITAIRE_URL} target="_blank" rel="noopener noreferrer" className="hover:text-foreground transition">
+          <a
+            href={SOLITAIRE_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-foreground transition"
+          >
             Solitaire ↗
           </a>
-          <a href={PAC_URL} target="_blank" rel="noopener noreferrer" className="hover:text-foreground transition">
+          <a
+            href={PAC_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-foreground transition"
+          >
             Pac vs Ghosts ↗
           </a>
           <a href="mailto:hi@iota.fun" className="hover:text-foreground transition">
