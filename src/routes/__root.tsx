@@ -91,11 +91,31 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "twitter:site", content: "@iotafun" },
       { property: "og:title", content: "iota.fun — A tiny lab making fun games" },
       { name: "twitter:title", content: "iota.fun — A tiny lab making fun games" },
-      { name: "description", content: "Angel Dates & Ghostly Games is a landing page for iotafun.com, showcasing two engaging mobile games." },
-      { property: "og:description", content: "Angel Dates & Ghostly Games is a landing page for iotafun.com, showcasing two engaging mobile games." },
-      { name: "twitter:description", content: "Angel Dates & Ghostly Games is a landing page for iotafun.com, showcasing two engaging mobile games." },
-      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/c0a4578d-f349-4269-80cb-6db4e3e94095/id-preview-f2a7c350--83d4abe5-70df-40b4-b97f-2ad8d9633a83.lovable.app-1781899789481.png" },
-      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/c0a4578d-f349-4269-80cb-6db4e3e94095/id-preview-f2a7c350--83d4abe5-70df-40b4-b97f-2ad8d9633a83.lovable.app-1781899789481.png" },
+      {
+        name: "description",
+        content:
+          "Angel Dates & Ghostly Games is a landing page for iotafun.com, showcasing two engaging mobile games.",
+      },
+      {
+        property: "og:description",
+        content:
+          "Angel Dates & Ghostly Games is a landing page for iotafun.com, showcasing two engaging mobile games.",
+      },
+      {
+        name: "twitter:description",
+        content:
+          "Angel Dates & Ghostly Games is a landing page for iotafun.com, showcasing two engaging mobile games.",
+      },
+      {
+        property: "og:image",
+        content:
+          "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/c0a4578d-f349-4269-80cb-6db4e3e94095/id-preview-f2a7c350--83d4abe5-70df-40b4-b97f-2ad8d9633a83.lovable.app-1781899789481.png",
+      },
+      {
+        name: "twitter:image",
+        content:
+          "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/c0a4578d-f349-4269-80cb-6db4e3e94095/id-preview-f2a7c350--83d4abe5-70df-40b4-b97f-2ad8d9633a83.lovable.app-1781899789481.png",
+      },
     ],
     links: [
       { rel: "icon", type: "image/svg+xml", href: "/favicon.svg" },

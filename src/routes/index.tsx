@@ -4,6 +4,8 @@ import type { ReactNode } from "react";
 import solitaireImg from "@/assets/solitaire.jpg";
 import pacImg from "@/assets/pacvsghosts.jpg";
 import bgGrid from "@/assets/bg-grid.jpg";
+import { Nav } from "@/components/Nav";
+import { Footer } from "@/components/Footer";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -41,46 +43,6 @@ function Landing() {
       <Lab />
       <Footer />
     </div>
-  );
-}
-
-function Logo() {
-  return (
-    <span className="relative inline-flex items-center justify-center w-8 h-8 rounded-md bg-gradient-arcade text-primary-foreground font-display font-bold shadow-neon-magenta">
-      ι
-    </span>
-  );
-}
-
-function Nav() {
-  return (
-    <header className="sticky top-0 z-50 backdrop-blur-md bg-background/60 border-b border-border/50">
-      <div className="mx-auto max-w-7xl px-6 h-16 flex items-center justify-between">
-        <a href="#top" className="flex items-center gap-2 font-display font-bold text-lg">
-          <Logo />
-          <span>
-            iota<span className="text-accent">.fun</span>
-          </span>
-        </a>
-        <nav className="hidden md:flex items-center gap-8 text-sm text-muted-foreground font-mono">
-          <a href="#games" className="hover:text-foreground transition">
-            games
-          </a>
-          <a href="#lab" className="hover:text-foreground transition">
-            lab
-          </a>
-          <a href="mailto:hi@iota.fun" className="hover:text-foreground transition">
-            contact
-          </a>
-        </nav>
-        <a
-          href="#games"
-          className="hidden sm:inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-primary text-primary-foreground font-mono text-xs font-semibold hover:scale-105 transition"
-        >
-          PLAY <Zap className="w-3.5 h-3.5" />
-        </a>
-      </div>
-    </header>
   );
 }
 
@@ -327,44 +289,5 @@ function Lab() {
         </div>
       </div>
     </section>
-  );
-}
-
-function Footer() {
-  return (
-    <footer className="border-t border-border">
-      <div className="mx-auto max-w-7xl px-6 py-12 flex flex-col md:flex-row gap-6 md:items-center md:justify-between">
-        <div className="flex items-center gap-2 font-display font-bold">
-          <Logo />
-          <span>
-            iota<span className="text-accent">.fun</span>
-          </span>
-          <span className="ml-3 font-mono text-xs text-muted-foreground">
-            © {new Date().getFullYear()} · A startup lab
-          </span>
-        </div>
-        <div className="flex gap-6 font-mono text-xs text-muted-foreground">
-          <a
-            href={SOLITAIRE_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hover:text-foreground transition"
-          >
-            Solitaire ↗
-          </a>
-          <a
-            href={PAC_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hover:text-foreground transition"
-          >
-            Pac vs Ghosts ↗
-          </a>
-          <a href="mailto:hi@iota.fun" className="hover:text-foreground transition">
-            hi@iota.fun
-          </a>
-        </div>
-      </div>
-    </footer>
   );
 }
