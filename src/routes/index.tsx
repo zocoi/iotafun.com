@@ -21,8 +21,9 @@ export const Route = createFileRoute("/")({
           "Two games. One tiny lab. Solitaire: Classic Angel Dates on iOS and the multiplayer browser arcade Pac vs Ghosts.",
       },
       { property: "og:type", content: "website" },
-      { property: "og:url", content: "/" },
+      { property: "og:url", content: "https://iotafun.com/" },
     ],
+    links: [{ rel: "canonical", href: "https://iotafun.com/" }],
   }),
   component: Landing,
 });
