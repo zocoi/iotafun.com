@@ -52,7 +52,18 @@ async function generateStaticHtml() {
     path.join(distRoot, "favicon.svg")
   );
 
+  // Copy app-ads.txt to dist/ if present
+  const appAdsSource = path.join(clientDir, "app-ads.txt");
+  const appAdsDest = path.join(distRoot, "app-ads.txt");
+  try {
+    await fs.copyFile(appAdsSource, appAdsDest);
+    console.log("Copied app-ads.txt to dist/");
+  } catch {
+    // app-ads.txt may not exist, skip silently
+  }
+
   // Remove server build artifacts not needed for static hosting
+
   await fs.rm(path.join(distRoot, "server"), { recursive: true, force: true });
   await fs.rm(path.join(distRoot, "client"), { recursive: true, force: true });
   await fs.rm(path.join(distRoot, "nitro.json"), { force: true });
