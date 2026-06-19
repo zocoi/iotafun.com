@@ -1,4 +1,5 @@
 import fs from "fs/promises";
+import path from "path";
 
 async function generateStaticHtml() {
   // Load the SSR server and render the home page
@@ -29,8 +30,39 @@ async function generateStaticHtml() {
     ""
   );
 
-  await fs.writeFile("dist/index.html", html, "utf-8");
+  // Reorganize dist for static hosting: move assets up from client/
+  const distRoot = path.resolve("dist");
+  const clientDir = path.join(distRoot, "client");
+  const assetsDir = path.join(clientDir, "assets");
+  const newAssetsDir = path.join(distRoot, "assets");
+
+  // Copy assets to dist/assets/
+  await fs.mkdir(newAssetsDir, { recursive: true });
+  const assetFiles = await fs.readdir(assetsDir);
+  for (const file of assetFiles) {
+    await fs.copyFile(
+      path.join(assetsDir, file),
+      path.join(newAssetsDir, file)
+    );
+  }
+
+  // Copy favicon to dist/
+  await fs.copyFile(
+    path.join(clientDir, "favicon.svg"),
+    path.join(distRoot, "favicon.svg")
+  );
+
+  // Remove server build artifacts not needed for static hosting
+  await fs.rm(path.join(distRoot, "server"), { recursive: true, force: true });
+  await fs.rm(path.join(distRoot, "client"), { recursive: true, force: true });
+  await fs.rm(path.join(distRoot, "nitro.json"), { force: true });
+  await fs.rm(path.join(distRoot, "package.json"), { force: true });
+  await fs.rm(path.join(distRoot, "package-lock.json"), { force: true });
+
+  // Write the static HTML
+  await fs.writeFile(path.join(distRoot, "index.html"), html, "utf-8");
   console.log("Generated dist/index.html for static hosting");
+  console.log("Static assets copied to dist/assets/ and dist/favicon.svg");
 }
 
 generateStaticHtml().catch((err) => {
