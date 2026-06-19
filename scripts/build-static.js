@@ -8,7 +8,7 @@ async function generateStaticHtml() {
   const response = await server.default.fetch(
     request,
     {},
-    { waitUntil: () => {}, passThroughOnException: () => {} }
+    { waitUntil: () => {}, passThroughOnException: () => {} },
   );
   let html = await response.text();
 
@@ -25,10 +25,7 @@ async function generateStaticHtml() {
   html = html.split('"/assets/').join('"./assets/');
 
   // Remove dev-only tanstack router dev styles link if present
-  html = html.replace(
-    /<link[^>]*data-tanstack-router-dev-styles[^>]*>\n?/g,
-    ""
-  );
+  html = html.replace(/<link[^>]*data-tanstack-router-dev-styles[^>]*>\n?/g, "");
 
   // Reorganize dist for static hosting: move assets up from client/
   const distRoot = path.resolve("dist");
@@ -40,17 +37,11 @@ async function generateStaticHtml() {
   await fs.mkdir(newAssetsDir, { recursive: true });
   const assetFiles = await fs.readdir(assetsDir);
   for (const file of assetFiles) {
-    await fs.copyFile(
-      path.join(assetsDir, file),
-      path.join(newAssetsDir, file)
-    );
+    await fs.copyFile(path.join(assetsDir, file), path.join(newAssetsDir, file));
   }
 
   // Copy favicon to dist/
-  await fs.copyFile(
-    path.join(clientDir, "favicon.svg"),
-    path.join(distRoot, "favicon.svg")
-  );
+  await fs.copyFile(path.join(clientDir, "favicon.svg"), path.join(distRoot, "favicon.svg"));
 
   // Copy app-ads.txt to dist/ if present
   const appAdsSource = path.join(clientDir, "app-ads.txt");

@@ -8,6 +8,7 @@ import {
   Scripts,
 } from "@tanstack/react-router";
 import { useEffect, type ReactNode } from "react";
+import { Analytics } from "@vercel/analytics/react";
 
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
@@ -78,7 +79,11 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { title: "iota.fun — A tiny lab making fun games" },
-      { name: "description", content: "iota.fun is a startup lab crafting playful games. Meet Solitaire: Classic Angel Dates and the multiplayer arcade Pac vs Ghosts." },
+      {
+        name: "description",
+        content:
+          "iota.fun is a startup lab crafting playful games. Meet Solitaire: Classic Angel Dates and the multiplayer arcade Pac vs Ghosts.",
+      },
       { name: "author", content: "iota.fun" },
       { property: "og:site_name", content: "iota.fun" },
       { property: "og:type", content: "website" },
@@ -111,6 +116,7 @@ function RootShell({ children }: { children: ReactNode }) {
       <body>
         {children}
         <Scripts />
+        <Analytics />
       </body>
     </html>
   );
