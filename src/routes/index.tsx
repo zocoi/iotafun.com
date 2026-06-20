@@ -154,6 +154,7 @@ function Games() {
           ctaIcon={<Apple className="w-4 h-4" />}
           href={SOLITAIRE_URL}
           accent="cyan"
+          ageLabel="16+"
         />
         <GameCard
           tag="02 · Arcade"
@@ -166,6 +167,7 @@ function Games() {
           ctaIcon={<Globe className="w-4 h-4" />}
           href={PAC_URL}
           accent="magenta"
+          ageLabel="Everyone"
         />
       </div>
     </section>
@@ -183,6 +185,7 @@ function GameCard({
   ctaIcon,
   href,
   accent,
+  ageLabel,
 }: {
   tag: string;
   title: string;
@@ -194,6 +197,7 @@ function GameCard({
   ctaIcon: ReactNode;
   href: string;
   accent: "cyan" | "magenta";
+  ageLabel?: string;
 }) {
   const glow = accent === "cyan" ? "shadow-neon-cyan" : "shadow-neon-magenta";
   return (
@@ -215,6 +219,11 @@ function GameCard({
 
       <div className="p-6 md:p-8">
         <h3 className="font-display font-bold text-3xl md:text-4xl">{title}</h3>
+        {ageLabel && (
+          <div className="mt-2 inline-flex items-center px-2 py-0.5 rounded bg-muted text-muted-foreground font-mono text-xs font-semibold">
+            {ageLabel}
+          </div>
+        )}
         <p className="mt-4 text-muted-foreground leading-relaxed">{description}</p>
 
         <ul className="mt-6 flex flex-wrap gap-2">
