@@ -15,13 +15,13 @@ export const Route = createFileRoute("/")({
       {
         name: "description",
         content:
-          "iota.fun is a startup lab crafting playful games. Meet Solitaire: Classic Angel Dates, the multiplayer arcade Pac vs Ghosts, and the hide-and-seek game Mecha Chameleon.",
+          "iota.fun is a startup lab crafting playful games. Meet Solitaire: Classic Angel Dates, the multiplayer arcade Pac vs Ghosts, and the hide-and-seek game Neon Chameleon.",
       },
       { property: "og:title", content: "iota.fun — A tiny lab making fun games" },
       {
         property: "og:description",
         content:
-          "Three games. One tiny lab. Solitaire: Classic Angel Dates on iOS, plus the multiplayer browser games Pac vs Ghosts and Mecha Chameleon.",
+          "Three games. One tiny lab. Solitaire: Classic Angel Dates on iOS, plus the multiplayer browser games Pac vs Ghosts and Neon Chameleon.",
       },
       { property: "og:type", content: "website" },
       { property: "og:url", content: "https://iotafun.com/" },
@@ -175,11 +175,11 @@ function Games() {
         />
         <GameCard
           tag="03 · Hide & Seek"
-          title="Mecha Chameleon"
+          title="Neon Chameleon"
           description="Paint yourself into a photo and vanish. One player seeks; everyone else camouflages a figure against the crowd and tries to survive the clock. Real-time multiplayer, right in the browser."
           features={["Real-time multiplayer", "Browser based", "Blend in to survive"]}
           image={chameleonImg}
-          imageAlt="Mecha Chameleon gameplay: a figure painted to blend into an aerial crosswalk photo"
+          imageAlt="Neon Chameleon gameplay: a figure painted to blend into an aerial crosswalk photo"
           ctaLabel="Play in browser"
           ctaIcon={<Globe className="w-4 h-4" />}
           href={CHAMELEON_URL}

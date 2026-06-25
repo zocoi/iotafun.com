@@ -41,7 +41,7 @@ export function Footer() {
             rel="noopener noreferrer"
             className="hover:text-foreground transition"
           >
-            Mecha Chameleon ↗
+            Neon Chameleon ↗
           </a>
           <Link to="/privacy" className="hover:text-foreground transition">
             Privacy
