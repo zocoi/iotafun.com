@@ -3,6 +3,7 @@ import { ArrowUpRight, Gamepad2, Sparkles, Users, Zap, Apple, Globe } from "luci
 import type { ReactNode } from "react";
 import solitaireImg from "@/assets/solitaire.jpg";
 import pacImg from "@/assets/pacvsghosts.jpg";
+import chameleonImg from "@/assets/chameleon.jpg";
 import bgGrid from "@/assets/bg-grid.jpg";
 import { Nav } from "@/components/Nav";
 import { Footer } from "@/components/Footer";
@@ -14,13 +15,13 @@ export const Route = createFileRoute("/")({
       {
         name: "description",
         content:
-          "iota.fun is a startup lab crafting playful games. Meet Solitaire: Classic Angel Dates and the multiplayer arcade Pac vs Ghosts.",
+          "iota.fun is a startup lab crafting playful games. Meet Solitaire: Classic Angel Dates, the multiplayer arcade Pac vs Ghosts, and the hide-and-seek game Mecha Chameleon.",
       },
       { property: "og:title", content: "iota.fun — A tiny lab making fun games" },
       {
         property: "og:description",
         content:
-          "Two games. One tiny lab. Solitaire: Classic Angel Dates on iOS and the multiplayer browser arcade Pac vs Ghosts.",
+          "Three games. One tiny lab. Solitaire: Classic Angel Dates on iOS, plus the multiplayer browser games Pac vs Ghosts and Mecha Chameleon.",
       },
       { property: "og:type", content: "website" },
       { property: "og:url", content: "https://iotafun.com/" },
@@ -32,6 +33,7 @@ export const Route = createFileRoute("/")({
 
 const SOLITAIRE_URL = "https://apps.apple.com/us/app/solitaire-classic-angel-dates/id6779414887";
 const PAC_URL = "https://pac-vs-ghosts.pages.dev/";
+const CHAMELEON_URL = "https://chameleon-c3z.pages.dev/";
 
 function Landing() {
   return (
@@ -87,7 +89,7 @@ function Hero() {
         </div>
 
         <div className="mt-20 grid grid-cols-3 gap-6 max-w-md">
-          <Stat label="games" value="02" />
+          <Stat label="games" value="03" />
           <Stat label="platforms" value="iOS · Web" />
           <Stat label="players" value="∞" />
         </div>
@@ -113,6 +115,8 @@ function Marquee() {
     "SOLITAIRE: CLASSIC ANGEL DATES",
     "★ MULTIPLAYER",
     "PAC VS GHOSTS",
+    "★ HIDE & SEEK",
+    "MECHA CHAMELEON",
     "★ MADE WITH LOVE",
     "IOTA.FUN LABS",
   ];
@@ -138,11 +142,11 @@ function Games() {
           // The catalogue
         </div>
         <h2 className="font-display font-bold text-5xl md:text-6xl max-w-2xl">
-          Two games. Pick your <span className="text-gradient-arcade">mood</span>.
+          Three games. Pick your <span className="text-gradient-arcade">mood</span>.
         </h2>
       </div>
 
-      <div className="grid lg:grid-cols-2 gap-8">
+      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
         <GameCard
           tag="01 · Cozy"
           title="Solitaire: Classic Angel Dates"
@@ -167,6 +171,19 @@ function Games() {
           ctaIcon={<Globe className="w-4 h-4" />}
           href={PAC_URL}
           accent="magenta"
+          ageLabel="Everyone"
+        />
+        <GameCard
+          tag="03 · Hide & Seek"
+          title="Mecha Chameleon"
+          description="Paint yourself into a photo and vanish. One player seeks; everyone else camouflages a figure against the crowd and tries to survive the clock. Real-time multiplayer, right in the browser."
+          features={["Real-time multiplayer", "Browser based", "Blend in to survive"]}
+          image={chameleonImg}
+          imageAlt="Mecha Chameleon gameplay: a figure painted to blend into an aerial crosswalk photo"
+          ctaLabel="Play in browser"
+          ctaIcon={<Globe className="w-4 h-4" />}
+          href={CHAMELEON_URL}
+          accent="cyan"
           ageLabel="Everyone"
         />
       </div>

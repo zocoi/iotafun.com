@@ -3,6 +3,7 @@ import { Logo } from "./Logo";
 
 const SOLITAIRE_URL = "https://apps.apple.com/us/app/solitaire-classic-angel-dates/id6779414887";
 const PAC_URL = "https://pac-vs-ghosts.pages.dev/";
+const CHAMELEON_URL = "https://chameleon-c3z.pages.dev/";
 
 export function Footer() {
   return (
@@ -33,6 +34,14 @@ export function Footer() {
             className="hover:text-foreground transition"
           >
             Pac vs Ghosts ↗
+          </a>
+          <a
+            href={CHAMELEON_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-foreground transition"
+          >
+            Mecha Chameleon ↗
           </a>
           <Link to="/privacy" className="hover:text-foreground transition">
             Privacy
