@@ -82,7 +82,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       {
         name: "description",
         content:
-          "iota.fun is a startup lab crafting playful games. Meet Solitaire: Classic Angel Dates and the multiplayer arcade Pac vs Ghosts.",
+          "iota.fun is a tiny lab shipping playful games — Solitaire: Classic Angel Dates on iOS, plus browser multiplayer Pac vs Ghosts and Neon Chameleon.",
       },
       { name: "author", content: "iota.fun" },
       { property: "og:site_name", content: "iota.fun" },
@@ -92,19 +92,14 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { property: "og:title", content: "iota.fun — A tiny lab making fun games" },
       { name: "twitter:title", content: "iota.fun — A tiny lab making fun games" },
       {
-        name: "description",
-        content:
-          "Angel Dates & Ghostly Games is a landing page for iotafun.com, showcasing two engaging mobile games.",
-      },
-      {
         property: "og:description",
         content:
-          "Angel Dates & Ghostly Games is a landing page for iotafun.com, showcasing two engaging mobile games.",
+          "iota.fun is a tiny lab shipping playful games — Solitaire: Classic Angel Dates on iOS, plus browser multiplayer Pac vs Ghosts and Neon Chameleon.",
       },
       {
         name: "twitter:description",
         content:
-          "Angel Dates & Ghostly Games is a landing page for iotafun.com, showcasing two engaging mobile games.",
+          "iota.fun is a tiny lab shipping playful games — Solitaire: Classic Angel Dates on iOS, plus browser multiplayer Pac vs Ghosts and Neon Chameleon.",
       },
       {
         property: "og:image",
@@ -115,6 +110,18 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         name: "twitter:image",
         content:
           "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/c0a4578d-f349-4269-80cb-6db4e3e94095/id-preview-f2a7c350--83d4abe5-70df-40b4-b97f-2ad8d9633a83.lovable.app-1781899789481.png",
+      },
+    ],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Organization",
+          name: "iota.fun",
+          url: "https://iotafun.lovable.app/",
+          sameAs: ["https://iotafun.com/"],
+        }),
       },
     ],
     links: [
