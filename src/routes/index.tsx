@@ -15,18 +15,55 @@ export const Route = createFileRoute("/")({
       {
         name: "description",
         content:
-          "iota.fun is a startup lab crafting playful games. Meet Solitaire: Classic Angel Dates, the multiplayer arcade Pac vs Ghosts, and the hide-and-seek game Neon Chameleon.",
+          "iota.fun is a tiny lab shipping playful games — Solitaire: Classic Angel Dates on iOS, plus browser multiplayer Pac vs Ghosts and Neon Chameleon.",
       },
       { property: "og:title", content: "iota.fun — A tiny lab making fun games" },
       {
         property: "og:description",
         content:
-          "Three games. One tiny lab. Solitaire: Classic Angel Dates on iOS, plus the multiplayer browser games Pac vs Ghosts and Neon Chameleon.",
+          "Three games. One tiny lab. Solitaire: Classic Angel Dates on iOS, plus Pac vs Ghosts and Neon Chameleon in your browser.",
       },
       { property: "og:type", content: "website" },
       { property: "og:url", content: "https://iotafun.com/" },
     ],
     links: [{ rel: "canonical", href: "https://iotafun.com/" }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@graph": [
+            {
+              "@type": "SoftwareApplication",
+              name: "Solitaire: Classic Angel Dates",
+              applicationCategory: "GameApplication",
+              operatingSystem: "iOS",
+              description:
+                "A dreamy, slow-burn take on classic solitaire with angelic card art and daily challenges.",
+              url: "https://apps.apple.com/us/app/solitaire-classic-angel-dates/id6779414887",
+            },
+            {
+              "@type": "SoftwareApplication",
+              name: "Pac vs Ghosts",
+              applicationCategory: "GameApplication",
+              operatingSystem: "Web Browser",
+              description:
+                "Real-time multiplayer maze chase. Play the chomper or the ghosts in fast browser rounds.",
+              url: "https://pac-vs-ghosts.pages.dev/",
+            },
+            {
+              "@type": "SoftwareApplication",
+              name: "Neon Chameleon",
+              applicationCategory: "GameApplication",
+              operatingSystem: "Web Browser",
+              description:
+                "Real-time multiplayer hide-and-seek: camouflage a figure in a photo and survive the clock.",
+              url: "https://chameleon-c3z.pages.dev/",
+            },
+          ],
+        }),
+      },
+    ],
   }),
   component: Landing,
 });
