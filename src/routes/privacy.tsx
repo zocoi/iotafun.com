@@ -55,28 +55,28 @@ function PrivacyPage() {
         <section className="mx-auto max-w-3xl px-6 py-16">
           <div className="rounded-3xl bg-gradient-card border border-border/70 p-6 md:p-10 shadow-arcade">
             <p className="font-mono text-xs text-muted-foreground mb-10">
-              Last Updated: June 11, 2026
+              Last Updated: July 4, 2026
             </p>
 
             <div className="flex flex-col gap-10">
               <PolicySection
                 heading="Introduction"
-                text="This Privacy Policy describes how iota.fun collects, uses, and protects your information when you play our games. By using our games, you agree to the collection and use of information in accordance with this policy."
+                text="This Privacy Policy describes how iota.fun (the developer of the game Solitaire: Classic Angel Dates, available on Google Play and the Apple App Store) collects, uses, and protects your information when you play our games. By using Solitaire: Classic Angel Dates or any other iota.fun game, you agree to the collection and use of information in accordance with this policy."
               />
 
               <PolicySection
                 heading="Information We Collect"
-                text="We collect information that you provide directly to us, such as your player name. We also collect gameplay data including your progress, unlocked skins, and moments to provide and improve the game experience. Additionally, our advertising partners may collect device identifiers and usage data to serve personalized ads."
+                text="We collect information that you provide directly to us, such as your player name. We also collect gameplay data including your progress, unlocked skins, and moments to provide and improve the game experience. Additionally, our advertising partners (including Google AdMob) may collect device identifiers and usage data to serve personalized ads."
               />
 
               <PolicySection
                 heading="How We Use Your Information"
-                text="We use the information we collect to operate and maintain our games, personalize your experience, provide customer support, send updates and notifications, and analyze usage trends to improve our services."
+                text="We use the information we collect to operate and maintain Solitaire: Classic Angel Dates and our other games, personalize your experience, provide customer support, send updates and notifications, and analyze usage trends to improve our services."
               />
 
               <PolicySection
                 heading="Third-Party Services"
-                text="We use third-party services for advertising and analytics. These services may collect and process data according to their own privacy policies. We encourage you to review the privacy policies of our advertising and analytics partners."
+                text="We use third-party services for advertising and analytics, including Google AdMob. These services may collect and process data according to their own privacy policies. We encourage you to review the privacy policies of our advertising and analytics partners, including the Google Privacy Policy and AdMob privacy practices."
               />
 
               <PolicySection
@@ -86,17 +86,17 @@ function PrivacyPage() {
 
               <PolicySection
                 heading="Children's Privacy"
-                text="Our games are not intended for children under the age of 13. We do not knowingly collect personal information from children under 13. If you believe we have collected information from a child under 13, please contact us so we can take appropriate action."
+                text="Solitaire: Classic Angel Dates and our other games are not intended for children under the age of 13. We do not knowingly collect personal information from children under 13. If you believe we have collected information from a child under 13, please contact us so we can take appropriate action."
               />
 
               <PolicySection
                 heading="Changes to This Policy"
-                text="We may update this Privacy Policy from time to time. We will notify you of any changes by posting the new policy in our games or through other appropriate communication channels. Your continued use of our games after changes constitutes acceptance of the updated policy."
+                text="We may update this Privacy Policy from time to time. We will notify you of any changes by posting the new policy in our games or through other appropriate communication channels. Your continued use of Solitaire: Classic Angel Dates and our other games after changes constitutes acceptance of the updated policy."
               />
 
               <PolicySection
                 heading="Contact Us"
-                text="If you have any questions or concerns about this Privacy Policy, please contact us at hi@iota.fun."
+                text="If you have any questions or concerns about this Privacy Policy, please contact iota.fun at hi@iota.fun."
               />
             </div>
           </div>
