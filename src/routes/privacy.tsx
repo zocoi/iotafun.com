@@ -10,13 +10,13 @@ export const Route = createFileRoute("/privacy")({
       {
         name: "description",
         content:
-          "Privacy Policy for iota.fun games including Solitaire: Classic Angel Dates and Pac vs Ghosts.",
+          "Privacy Policy for iota.fun games including Solitaire Classic Angel Dates and Pac vs Ghosts.",
       },
       { property: "og:title", content: "Privacy Policy — iota.fun" },
       {
         property: "og:description",
         content:
-          "Privacy Policy for iota.fun games including Solitaire: Classic Angel Dates and Pac vs Ghosts.",
+          "Privacy Policy for iota.fun games including Solitaire Classic Angel Dates and Pac vs Ghosts.",
       },
       { property: "og:type", content: "website" },
       { property: "og:url", content: "https://iotafun.com/privacy" },
@@ -61,7 +61,7 @@ function PrivacyPage() {
             <div className="flex flex-col gap-10">
               <PolicySection
                 heading="Introduction"
-                text="This Privacy Policy describes how iota.fun (the developer of the game Solitaire: Classic Angel Dates, available on Google Play and the Apple App Store) collects, uses, and protects your information when you play our games. By using Solitaire: Classic Angel Dates or any other iota.fun game, you agree to the collection and use of information in accordance with this policy."
+                text="This Privacy Policy describes how iota.fun (the developer of the game Solitaire Classic Angel Dates, available on Google Play and the Apple App Store) collects, uses, and protects your information when you play our games. By using Solitaire Classic Angel Dates or any other iota.fun game, you agree to the collection and use of information in accordance with this policy."
               />
 
               <PolicySection
@@ -71,7 +71,7 @@ function PrivacyPage() {
 
               <PolicySection
                 heading="How We Use Your Information"
-                text="We use the information we collect to operate and maintain Solitaire: Classic Angel Dates and our other games, personalize your experience, provide customer support, send updates and notifications, and analyze usage trends to improve our services."
+                text="We use the information we collect to operate and maintain Solitaire Classic Angel Dates and our other games, personalize your experience, provide customer support, send updates and notifications, and analyze usage trends to improve our services."
               />
 
               <PolicySection
@@ -86,12 +86,12 @@ function PrivacyPage() {
 
               <PolicySection
                 heading="Children's Privacy"
-                text="Solitaire: Classic Angel Dates and our other games are not intended for children under the age of 13. We do not knowingly collect personal information from children under 13. If you believe we have collected information from a child under 13, please contact us so we can take appropriate action."
+                text="Solitaire Classic Angel Dates and our other games are not intended for children under the age of 13. We do not knowingly collect personal information from children under 13. If you believe we have collected information from a child under 13, please contact us so we can take appropriate action."
               />
 
               <PolicySection
                 heading="Changes to This Policy"
-                text="We may update this Privacy Policy from time to time. We will notify you of any changes by posting the new policy in our games or through other appropriate communication channels. Your continued use of Solitaire: Classic Angel Dates and our other games after changes constitutes acceptance of the updated policy."
+                text="We may update this Privacy Policy from time to time. We will notify you of any changes by posting the new policy in our games or through other appropriate communication channels. Your continued use of Solitaire Classic Angel Dates and our other games after changes constitutes acceptance of the updated policy."
               />
 
               <PolicySection
