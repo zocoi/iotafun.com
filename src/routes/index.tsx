@@ -15,13 +15,13 @@ export const Route = createFileRoute("/")({
       {
         name: "description",
         content:
-          "iota.fun is a tiny lab shipping playful games — Solitaire: Classic Angel Dates on iOS, plus browser multiplayer Pac vs Ghosts and Neon Chameleon.",
+          "iota.fun is a tiny lab shipping playful games — Solitaire Classic Angel Dates on iOS, plus browser multiplayer Pac vs Ghosts and Neon Chameleon.",
       },
       { property: "og:title", content: "iota.fun — A tiny lab making fun games" },
       {
         property: "og:description",
         content:
-          "Three games. One tiny lab. Solitaire: Classic Angel Dates on iOS, plus Pac vs Ghosts and Neon Chameleon in your browser.",
+          "Three games. One tiny lab. Solitaire Classic Angel Dates on iOS, plus Pac vs Ghosts and Neon Chameleon in your browser.",
       },
       { property: "og:type", content: "website" },
       { property: "og:url", content: "https://iotafun.com/" },
@@ -35,7 +35,7 @@ export const Route = createFileRoute("/")({
           "@graph": [
             {
               "@type": "SoftwareApplication",
-              name: "Solitaire: Classic Angel Dates",
+              name: "Solitaire Classic Angel Dates",
               applicationCategory: "GameApplication",
               operatingSystem: "iOS",
               description:
@@ -186,11 +186,11 @@ function Games() {
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
         <GameCard
           tag="01 · Cozy"
-          title="Solitaire: Classic Angel Dates"
+          title="Solitaire Classic Angel Dates"
           description="A dreamy, slow-burn take on classic solitaire. Soft pastels, angelic card art, satisfying tactile feedback. Built for the quiet five minutes between everything else."
           features={["Daily challenges", "Offline play", "Beautifully animated"]}
           image={solitaireImg}
-          imageAlt="Solitaire: Classic Angel Dates key art with angel-themed cards"
+          imageAlt="Solitaire Classic Angel Dates key art with angel-themed cards"
           ctaLabel="Get on App Store"
           ctaIcon={<Apple className="w-4 h-4" />}
           href={SOLITAIRE_URL}

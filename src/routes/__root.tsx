@@ -82,7 +82,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       {
         name: "description",
         content:
-          "iota.fun is a tiny lab shipping playful games — Solitaire: Classic Angel Dates on iOS, plus browser multiplayer Pac vs Ghosts and Neon Chameleon.",
+          "iota.fun is a tiny lab shipping playful games — Solitaire Classic Angel Dates on iOS, plus browser multiplayer Pac vs Ghosts and Neon Chameleon.",
       },
       { name: "author", content: "iota.fun" },
       { property: "og:site_name", content: "iota.fun" },
@@ -94,12 +94,12 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       {
         property: "og:description",
         content:
-          "iota.fun is a tiny lab shipping playful games — Solitaire: Classic Angel Dates on iOS, plus browser multiplayer Pac vs Ghosts and Neon Chameleon.",
+          "iota.fun is a tiny lab shipping playful games — Solitaire Classic Angel Dates on iOS, plus browser multiplayer Pac vs Ghosts and Neon Chameleon.",
       },
       {
         name: "twitter:description",
         content:
-          "iota.fun is a tiny lab shipping playful games — Solitaire: Classic Angel Dates on iOS, plus browser multiplayer Pac vs Ghosts and Neon Chameleon.",
+          "iota.fun is a tiny lab shipping playful games — Solitaire Classic Angel Dates on iOS, plus browser multiplayer Pac vs Ghosts and Neon Chameleon.",
       },
       {
         property: "og:image",
