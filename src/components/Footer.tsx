@@ -2,6 +2,7 @@ import { Link } from "@tanstack/react-router";
 import { Logo } from "./Logo";
 
 const SOLITAIRE_URL = "https://apps.apple.com/us/app/solitaire-classic-angel-dates/id6779414887";
+const SOLITAIRE_ANDROID_URL = "https://play.google.com/store/apps/details?id=com.zocoi.heartsolitaire";
 const PAC_URL = "https://pac-vs-ghosts.pages.dev/";
 const CHAMELEON_URL = "https://chameleon-c3z.pages.dev/";
 
@@ -25,7 +26,15 @@ export function Footer() {
             rel="noopener noreferrer"
             className="hover:text-foreground transition"
           >
-            Solitaire ↗
+            Solitaire (iOS) ↗
+          </a>
+          <a
+            href={SOLITAIRE_ANDROID_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-foreground transition"
+          >
+            Solitaire (Android) ↗
           </a>
           <a
             href={PAC_URL}

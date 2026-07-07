@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { ArrowUpRight, Gamepad2, Sparkles, Users, Zap, Apple, Globe } from "lucide-react";
-import type { ReactNode } from "react";
+import type { ReactNode, SVGProps } from "react";
 import solitaireImg from "@/assets/solitaire.jpg";
 import pacImg from "@/assets/pacvsghosts.jpg";
 import chameleonImg from "@/assets/chameleon.jpg";
@@ -15,13 +15,13 @@ export const Route = createFileRoute("/")({
       {
         name: "description",
         content:
-          "iota.fun is a tiny lab shipping playful games — Solitaire Classic Angel Dates on iOS, plus browser multiplayer Pac vs Ghosts and Neon Chameleon.",
+          "iota.fun is a tiny lab shipping playful games — Solitaire Classic Angel Dates on iOS & Android, plus browser multiplayer Pac vs Ghosts and Neon Chameleon.",
       },
       { property: "og:title", content: "iota.fun — A tiny lab making fun games" },
       {
         property: "og:description",
         content:
-          "Three games. One tiny lab. Solitaire Classic Angel Dates on iOS, plus Pac vs Ghosts and Neon Chameleon in your browser.",
+          "Three games. One tiny lab. Solitaire Classic Angel Dates on iOS & Android, plus Pac vs Ghosts and Neon Chameleon in your browser.",
       },
       { property: "og:type", content: "website" },
       { property: "og:url", content: "https://iotafun.com/" },
@@ -41,6 +41,15 @@ export const Route = createFileRoute("/")({
               description:
                 "A dreamy, slow-burn take on classic solitaire with angelic card art and daily challenges.",
               url: "https://apps.apple.com/us/app/solitaire-classic-angel-dates/id6779414887",
+            },
+            {
+              "@type": "SoftwareApplication",
+              name: "Solitaire Classic Angel Dates",
+              applicationCategory: "GameApplication",
+              operatingSystem: "Android",
+              description:
+                "A dreamy, slow-burn take on classic solitaire with angelic card art and daily challenges.",
+              url: "https://play.google.com/store/apps/details?id=com.zocoi.heartsolitaire",
             },
             {
               "@type": "SoftwareApplication",
@@ -69,8 +78,19 @@ export const Route = createFileRoute("/")({
 });
 
 const SOLITAIRE_URL = "https://apps.apple.com/us/app/solitaire-classic-angel-dates/id6779414887";
+const SOLITAIRE_ANDROID_URL = "https://play.google.com/store/apps/details?id=com.zocoi.heartsolitaire";
 const PAC_URL = "https://pac-vs-ghosts.pages.dev/";
 const CHAMELEON_URL = "https://chameleon-c3z.pages.dev/";
+
+function GooglePlayIcon(props: SVGProps<SVGSVGElement>) {
+  return (
+    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden {...props}>
+      <path d="M3.609 1.814 13.792 12 3.61 22.186a.996.996 0 0 1-.61-.92V2.734a1 1 0 0 1 .609-.92z" />
+      <path d="m14.539 12.747 2.86 2.86-9.706 5.49 6.846-8.35zm0-1.494-6.846-8.35 9.706 5.49-2.86 2.86z" opacity="0.7" />
+      <path d="m20.437 9.628 2.318 1.31a1 1 0 0 1 0 1.736l-2.318 1.31L17.276 12l3.16-2.372z" opacity="0.5" />
+    </svg>
+  );
+}
 
 function Landing() {
   return (
@@ -127,7 +147,7 @@ function Hero() {
 
         <div className="mt-20 grid grid-cols-3 gap-6 max-w-md">
           <Stat label="games" value="03" />
-          <Stat label="platforms" value="iOS · Web" />
+          <Stat label="platforms" value="iOS · Android · Web" />
           <Stat label="players" value="∞" />
         </div>
       </div>
@@ -191,9 +211,14 @@ function Games() {
           features={["Daily challenges", "Offline play", "Beautifully animated"]}
           image={solitaireImg}
           imageAlt="Solitaire Classic Angel Dates key art with angel-themed cards"
-          ctaLabel="Get on App Store"
+          ctaLabel="App Store"
           ctaIcon={<Apple className="w-4 h-4" />}
           href={SOLITAIRE_URL}
+          secondaryCta={{
+            label: "Google Play",
+            icon: <GooglePlayIcon className="w-4 h-4" />,
+            href: SOLITAIRE_ANDROID_URL,
+          }}
           accent="cyan"
           ageLabel="16+"
         />
@@ -240,6 +265,7 @@ function GameCard({
   href,
   accent,
   ageLabel,
+  secondaryCta,
 }: {
   tag: string;
   title: string;
@@ -252,6 +278,7 @@ function GameCard({
   href: string;
   accent: "cyan" | "magenta";
   ageLabel?: string;
+  secondaryCta?: { label: string; icon: ReactNode; href: string };
 }) {
   const glow = accent === "cyan" ? "shadow-neon-cyan" : "shadow-neon-magenta";
   return (
@@ -291,15 +318,28 @@ function GameCard({
           ))}
         </ul>
 
-        <a
-          href={href}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="mt-8 inline-flex items-center gap-2 px-5 py-3 rounded-full bg-foreground text-background font-display font-semibold hover:bg-primary hover:text-primary-foreground transition"
-        >
-          {ctaIcon} {ctaLabel}
-          <ArrowUpRight className="w-4 h-4" />
-        </a>
+        <div className="mt-8 flex flex-wrap gap-3">
+          <a
+            href={href}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 px-5 py-3 rounded-full bg-foreground text-background font-display font-semibold hover:bg-primary hover:text-primary-foreground transition"
+          >
+            {ctaIcon} {ctaLabel}
+            <ArrowUpRight className="w-4 h-4" />
+          </a>
+          {secondaryCta && (
+            <a
+              href={secondaryCta.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-5 py-3 rounded-full border border-border bg-card/40 hover:bg-card transition font-display font-semibold"
+            >
+              {secondaryCta.icon} {secondaryCta.label}
+              <ArrowUpRight className="w-4 h-4" />
+            </a>
+          )}
+        </div>
       </div>
     </article>
   );
