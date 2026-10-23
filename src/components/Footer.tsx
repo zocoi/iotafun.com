@@ -19,7 +19,7 @@ export function Footer() {
             © {new Date().getFullYear()} · A startup lab
           </span>
         </div>
-        <div className="flex gap-6 font-mono text-xs text-muted-foreground">
+        <div className="flex flex-wrap gap-x-6 gap-y-3 md:justify-end font-mono text-xs text-muted-foreground">
           <a
             href={SOLITAIRE_URL}
             target="_blank"
@@ -51,6 +51,14 @@ export function Footer() {
             className="hover:text-foreground transition"
           >
             Neon Chameleon ↗
+          </a>
+          <a
+            href="https://last-bastion.zocoi.workers.dev/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-foreground transition"
+          >
+            Last Bastion ↗
           </a>
           <Link to="/privacy" className="hover:text-foreground transition">
             Privacy

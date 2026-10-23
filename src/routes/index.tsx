@@ -4,6 +4,7 @@ import type { ReactNode, SVGProps } from "react";
 import solitaireImg from "@/assets/solitaire.jpg";
 import pacImg from "@/assets/pacvsghosts.jpg";
 import chameleonImg from "@/assets/chameleon.jpg";
+import lastBastionImg from "@/assets/last-bastion.jpg";
 import bgGrid from "@/assets/bg-grid.jpg";
 import { Nav } from "@/components/Nav";
 import { Footer } from "@/components/Footer";
@@ -16,13 +17,13 @@ export const Route = createFileRoute("/")({
       {
         name: "description",
         content:
-          "iota.fun is a tiny lab shipping playful games — Solitaire Classic Angel Dates on iOS & Android, plus browser multiplayer Pac vs Ghosts and Neon Chameleon.",
+          "Play multiplayer games from iota.fun: Starcraft: Last Bastion, Pac vs Ghosts and Neon Chameleon, plus Solitaire Classic Angel Dates for solo play.",
       },
       { property: "og:title", content: "iota.fun — A tiny lab making fun games" },
       {
         property: "og:description",
         content:
-          "Three games. One tiny lab. Solitaire Classic Angel Dates on iOS & Android, plus Pac vs Ghosts and Neon Chameleon in your browser.",
+          "Four games. One tiny lab. Discover Starcraft: Last Bastion, Pac vs Ghosts and Neon Chameleon multiplayer, plus Solitaire Classic Angel Dates for solo play.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -35,6 +36,14 @@ export const Route = createFileRoute("/")({
         children: JSON.stringify({
           "@context": "https://schema.org",
           "@graph": [
+            {
+              "@type": "SoftwareApplication",
+              name: "Starcraft: Last Bastion",
+              applicationCategory: "GameApplication",
+              operatingSystem: "Web Browser",
+              description: "A multiplayer game set on a sci-fi frontier, playable in your browser.",
+              url: "https://last-bastion.zocoi.workers.dev/",
+            },
             {
               "@type": "SoftwareApplication",
               name: "Solitaire Classic Angel Dates",
@@ -81,6 +90,7 @@ export const Route = createFileRoute("/")({
 
 const SOLITAIRE_URL = "https://apps.apple.com/us/app/solitaire-classic-angel-dates/id6779414887";
 const SOLITAIRE_ANDROID_URL = "https://play.google.com/store/apps/details?id=com.zocoi.heartsolitaire";
+const LAST_BASTION_URL = "https://last-bastion.zocoi.workers.dev/";
 const PAC_URL = "https://pac-vs-ghosts.pages.dev/";
 const CHAMELEON_URL = "https://chameleon-c3z.pages.dev/";
 
@@ -101,6 +111,7 @@ function Landing() {
       <Hero />
       <Marquee />
       <Games />
+      <SinglePlayerGames />
       <Lab />
       <Footer />
     </div>
@@ -148,7 +159,7 @@ function Hero() {
         </div>
 
         <div className="mt-20 grid grid-cols-3 gap-6 max-w-md">
-          <Stat label="games" value="03" />
+          <Stat label="games" value="04" />
           <Stat label="platforms" value="iOS · Android · Web" />
           <Stat label="players" value="∞" />
         </div>
@@ -176,6 +187,8 @@ function Marquee() {
     "PAC VS GHOSTS",
     "★ HIDE & SEEK",
     "MECHA CHAMELEON",
+    "★ NEW MULTIPLAYER",
+    "STARCRAFT: LAST BASTION",
     "★ MADE WITH LOVE",
     "IOTA.FUN LABS",
   ];
@@ -201,28 +214,22 @@ function Games() {
           // The catalogue
         </div>
         <h2 className="font-display font-bold text-5xl md:text-6xl max-w-2xl">
-          Three games. Pick your <span className="text-gradient-arcade">mood</span>.
+          Multiplayer <span className="text-gradient-arcade">games</span>.
         </h2>
       </div>
 
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
         <GameCard
-          tag="01 · Cozy"
-          title="Solitaire Classic Angel Dates"
-          description="A dreamy, slow-burn take on classic solitaire. Soft pastels, angelic card art, satisfying tactile feedback. Built for the quiet five minutes between everything else."
-          features={["Daily challenges", "Offline play", "Beautifully animated"]}
-          image={solitaireImg}
-          imageAlt="Solitaire Classic Angel Dates key art with angel-themed cards"
-          ctaLabel="App Store"
-          ctaIcon={<Apple className="w-4 h-4" />}
-          href={SOLITAIRE_URL}
-          secondaryCta={{
-            label: "Google Play",
-            icon: <GooglePlayIcon className="w-4 h-4" />,
-            href: SOLITAIRE_ANDROID_URL,
-          }}
+          tag="01 · New"
+          title="Starcraft: Last Bastion"
+          description="A new multiplayer game on the sci-fi frontier. Step into Last Bastion and play together, right in your browser."
+          features={["Multiplayer", "Browser based"]}
+          image={lastBastionImg}
+          imageAlt="Starcraft: Last Bastion concept artwork of a futuristic fortress facing an alien swarm"
+          ctaLabel="Play in browser"
+          ctaIcon={<Globe className="w-4 h-4" />}
+          href={LAST_BASTION_URL}
           accent="cyan"
-          ageLabel="16+"
         />
         <GameCard
           tag="02 · Arcade"
@@ -250,6 +257,43 @@ function Games() {
           accent="cyan"
           ageLabel="Everyone"
         />
+      </div>
+    </section>
+  );
+}
+
+function SinglePlayerGames() {
+  return (
+    <section id="single-player" className="border-t border-border bg-card/30">
+      <div className="mx-auto max-w-7xl px-6 py-24">
+        <div className="mb-14">
+          <div className="font-mono text-xs text-neon-cyan uppercase tracking-widest mb-3">
+            // Your own pace
+          </div>
+          <h2 className="font-display font-bold text-5xl md:text-6xl">
+            Single Player
+          </h2>
+        </div>
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <GameCard
+          tag="04 · Cozy"
+          title="Solitaire Classic Angel Dates"
+          description="A dreamy, slow-burn take on classic solitaire. Soft pastels, angelic card art, satisfying tactile feedback. Built for the quiet five minutes between everything else."
+          features={["Daily challenges", "Offline play", "Beautifully animated"]}
+          image={solitaireImg}
+          imageAlt="Solitaire Classic Angel Dates key art with angel-themed cards"
+          ctaLabel="App Store"
+          ctaIcon={<Apple className="w-4 h-4" />}
+          href={SOLITAIRE_URL}
+          secondaryCta={{
+            label: "Google Play",
+            icon: <GooglePlayIcon className="w-4 h-4" />,
+            href: SOLITAIRE_ANDROID_URL,
+          }}
+          accent="cyan"
+          ageLabel="16+"
+        />
+        </div>
       </div>
     </section>
   );
@@ -291,8 +335,8 @@ function GameCard({
           src={image}
           alt={imageAlt}
           loading="lazy"
-          width={1024}
-          height={1024}
+          width={image === lastBastionImg ? 1280 : 1024}
+          height={image === lastBastionImg ? 960 : 1024}
           className="w-full h-full object-cover transition duration-700 group-hover:scale-105"
         />
         <div className="absolute top-4 left-4 z-20 px-3 py-1 rounded-full bg-background/80 backdrop-blur border border-border font-mono text-[11px] tracking-widest uppercase">
