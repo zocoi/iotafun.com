@@ -328,7 +328,7 @@ function GameCard({
 }) {
   const glow = accent === "cyan" ? "shadow-neon-cyan" : "shadow-neon-magenta";
   return (
-    <article className="group relative rounded-3xl bg-gradient-card border border-border/70 p-2 overflow-hidden shadow-arcade hover:border-accent/60 transition">
+    <article className="group relative flex flex-col rounded-3xl bg-gradient-card border border-border/70 p-2 overflow-hidden shadow-arcade hover:border-accent/60 transition">
       <div className={`relative aspect-[4/3] rounded-2xl overflow-hidden ${glow}`}>
         <div className="absolute inset-0 scanlines z-10" aria-hidden />
         <img
@@ -344,7 +344,7 @@ function GameCard({
         </div>
       </div>
 
-      <div className="p-6 md:p-8">
+      <div className="flex flex-1 flex-col p-6 md:p-8">
         <h3 className="font-display font-bold text-3xl md:text-4xl">{title}</h3>
         {ageLabel && (
           <div className="mt-2 inline-flex items-center px-2 py-0.5 rounded bg-muted text-muted-foreground font-mono text-xs font-semibold">
@@ -353,7 +353,7 @@ function GameCard({
         )}
         <p className="mt-4 text-muted-foreground leading-relaxed">{description}</p>
 
-        <ul className="mt-6 flex flex-wrap gap-2">
+        <ul className="mt-6 mb-8 flex flex-wrap gap-2">
           {features.map((f) => (
             <li
               key={f}
@@ -364,7 +364,7 @@ function GameCard({
           ))}
         </ul>
 
-        <div className="mt-8 flex flex-wrap gap-3">
+        <div className="mt-auto flex flex-wrap gap-3">
           <a
             href={href}
             target="_blank"
