@@ -10,3 +10,6 @@
 > the editor, so keep the branch in a working state.
 
 <!-- LOVABLE:END -->
+
+- Derive sitemap URLs from router inventory and require each route's staticData.sitemap decision so new public pages are included intentionally and private subtrees remain excluded.
+- Keep page-specific social images on leaf routes, never the root, so one page cannot override another page's preview.

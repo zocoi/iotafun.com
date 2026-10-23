@@ -9,6 +9,7 @@ import { Nav } from "@/components/Nav";
 import { Footer } from "@/components/Footer";
 
 export const Route = createFileRoute("/")({
+  staticData: { sitemap: true },
   head: () => ({
     meta: [
       { title: "iota.fun — A tiny lab making fun games" },
@@ -24,6 +25,7 @@ export const Route = createFileRoute("/")({
           "Three games. One tiny lab. Solitaire Classic Angel Dates on iOS & Android, plus Pac vs Ghosts and Neon Chameleon in your browser.",
       },
       { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
       { property: "og:url", content: "https://iotafun.com/" },
     ],
     links: [{ rel: "canonical", href: "https://iotafun.com/" }],

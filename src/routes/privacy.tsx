@@ -4,6 +4,7 @@ import { Nav } from "@/components/Nav";
 import { Footer } from "@/components/Footer";
 
 export const Route = createFileRoute("/privacy")({
+  staticData: { sitemap: true },
   head: () => ({
     meta: [
       { title: "Privacy Policy — iota.fun" },
@@ -19,6 +20,7 @@ export const Route = createFileRoute("/privacy")({
           "Privacy Policy for iota.fun games including Solitaire Classic Angel Dates and Pac vs Ghosts.",
       },
       { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
       { property: "og:url", content: "https://iotafun.com/privacy" },
     ],
     links: [{ rel: "canonical", href: "https://iotafun.com/privacy" }],
