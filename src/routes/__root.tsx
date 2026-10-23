@@ -6,6 +6,7 @@ import {
   useRouter,
   HeadContent,
   Scripts,
+  type ErrorComponentProps,
 } from "@tanstack/react-router";
 import { useEffect, type ReactNode } from "react";
 import { Analytics } from "@vercel/analytics/react";
@@ -35,7 +36,7 @@ function NotFoundComponent() {
   );
 }
 
-function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
+function ErrorComponent({ error, reset }: ErrorComponentProps) {
   console.error(error);
   const router = useRouter();
   useEffect(() => {
@@ -74,6 +75,7 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
 }
 
 export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()({
+  staticData: { sitemap: false },
   head: () => ({
     meta: [
       { charSet: "utf-8" },
@@ -100,16 +102,6 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         name: "twitter:description",
         content:
           "iota.fun is a tiny lab shipping playful games — Solitaire Classic Angel Dates on iOS & Android, plus browser multiplayer Pac vs Ghosts and Neon Chameleon.",
-      },
-      {
-        property: "og:image",
-        content:
-          "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/c0a4578d-f349-4269-80cb-6db4e3e94095/id-preview-f2a7c350--83d4abe5-70df-40b4-b97f-2ad8d9633a83.lovable.app-1781899789481.png",
-      },
-      {
-        name: "twitter:image",
-        content:
-          "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/c0a4578d-f349-4269-80cb-6db4e3e94095/id-preview-f2a7c350--83d4abe5-70df-40b4-b97f-2ad8d9633a83.lovable.app-1781899789481.png",
       },
     ],
     scripts: [
